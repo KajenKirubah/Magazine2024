@@ -13,7 +13,7 @@ const postCSSPlugins = [
 ];
 
 let cssConfig =  {
-    test: '/\.css$/i',
+    test: /\.css$/i,
     use: ['css-loader']
 }
 
@@ -30,7 +30,7 @@ const config = {
 if(currentTask == "dev") {
     config.mode = "development";
     config.output = {
-        path: path.resolve(__dirname, './app'),
+        path: path.resolve(__dirname, './app/assets'),
     }
     cssConfig.use.unshift('style-loader');
     cssConfig.use.push({
